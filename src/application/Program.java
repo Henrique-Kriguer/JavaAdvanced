@@ -35,5 +35,6 @@ public class Program {
         System.out.println("Pagamento básico: "+ String.format("%.2f",rental.getInvoice().getBasicPayment()));
         System.out.println("Imposto: " + String.format("%.2f",rental.getInvoice().getTax()));
         System.out.println("Pagamento total: " + String.format("%.2f", rental.getInvoice().getTotalPayment()));
+        sc.close();
     }
 }
