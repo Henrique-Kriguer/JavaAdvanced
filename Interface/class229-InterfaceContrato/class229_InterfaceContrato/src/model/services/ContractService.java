@@ -10,6 +10,7 @@ public class ContractService {
     private PaymentService paymentService;
 
     public ContractService(PaymentService paymentService) {
+
         this.paymentService = paymentService;
     }
 
@@ -22,8 +23,17 @@ public class ContractService {
     }
 
     public void processContract(Contract contract,int months ){
-        contract.getInstalments().add(new Instalment(LocalDate.of(2018, 7, 25), 206.04));
+        Double basicQuota = contract.getContractValue() / months;
 
-        contract.getInstalments().add(new Instalment(LocalDate.of(2018, 8, 25), 208.08));
+
+        for( int i=1; i <= months; i++){
+            LocalDate dueDate = contract.getContractDate().plusMonths(i);
+
+            double interest = paymentService.interest(basicQuota,i);
+            double fee = paymentService.paymentFee(basicQuota + interest);
+            double quota = basicQuota + interest + fee;
+
+            contract.getInstalments().add(new Instalment(dueDate, quota));
+        }
     }
 }

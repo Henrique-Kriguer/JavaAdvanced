@@ -3,6 +3,8 @@ package application;
 import model.entities.Contract;
 import model.entities.Instalment;
 import model.services.ContractService;
+import model.services.PayPallService;
+import model.services.PaymentService;
 
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -31,9 +33,9 @@ public class Main {
         int n = sc.nextInt();
         System.out.println("Parcelas:");
 
-        ContractService contractService = new ContractService(null);
+        ContractService contractService = new ContractService(new PayPallService());
 
-        contractService.processContract(contract, number);
+        contractService.processContract(contract, n);
 
         for(Instalment instalment : contract.getInstalments()){
             System.out.println(instalment);
