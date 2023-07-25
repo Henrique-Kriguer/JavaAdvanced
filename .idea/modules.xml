@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaAdvanced.iml" filepath="$PROJECT_DIR$/.idea/JavaAdvanced.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Interface/class224_InterfaceLocadora/class224_InterfaceLocadora.iml" filepath="$PROJECT_DIR$/Interface/class224_InterfaceLocadora/class224_InterfaceLocadora.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Interface/class229-InterfaceContrato/class229-InterfaceContrato.iml" filepath="$PROJECT_DIR$/Interface/class229-InterfaceContrato/class229-InterfaceContrato.iml" />
+    </modules>
+  </component>
+</project>
